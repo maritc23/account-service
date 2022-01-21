@@ -1,0 +1,14 @@
+dbport: '27017'
+dbname: AccountDB
+spring:
+  application:
+    name: account-service
+  cloud:
+    config:
+      uri: localhost:8888
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure: ERROR

@@ -4,10 +4,17 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Data
 @AllArgsConstructor
@@ -15,15 +22,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Builder
 @Scope(scopeName = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
 @Document
-public class Product {
+public class Account {
     @Id
     int id;
-    String productType;
-    String productName;
-    Boolean applyMaintenanceCommission;
-    Double maintenanceCommission;
-    Boolean applyMaxMonthlyMovements;
-    Integer maxMonthlyMovements;
-    Integer allowedProductsPerClient;
-
+    String clientId;
+    String productId;
+    String accountNumber;
+    Double balance;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    Date createAt;
+    
 }
