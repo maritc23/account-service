@@ -27,7 +27,7 @@ public class ClientServiceImpl implements ClientService{
 		//this.webClient = webClientBuilder.baseUrl("http://localhost:8081/").build();
 	}
 	
-	public Mono<Customer> verifyClient(Integer id) {
+	public Mono<Customer> verifyClient(Integer id) { 
 		return  webclient.get()
                 .uri("/customers/1")
                 //.header(HttpHeaders.AUTHORIZATION, requestTokenHeader)

@@ -26,8 +26,8 @@ public class AccountController {
     @Autowired
     private ClientService clientService;
     
-   // @PostMapping("/test")
-    /*@GetMapping(value = "/test", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    @PostMapping("/test")
+   //* @GetMapping(value = "/test", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Mono<Customer>> test() {
     	logger.info("creating customer22");
@@ -36,8 +36,13 @@ public class AccountController {
     
     	return new ResponseEntity<Mono<Customer>>(c, c != null ? HttpStatus.OK : HttpStatus.NOT_FOUND);
         //accountServiceImpl.createAccount(account);
-    }*/
+    }
 
+
+   /* quiero invokar a clientService.verifyClient(1)
+    y validar si el resultado existo o no +
+    para hacer mi invocacion a save account*/
+    
     /*
     @GetMapping(value = "/test2", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
