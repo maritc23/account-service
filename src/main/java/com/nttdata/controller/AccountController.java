@@ -84,6 +84,12 @@ public class AccountController {
     	logger.info("creating customer");
     	accountService.createAccount(account);
     }
+    
+    @GetMapping("/accounts-by-client/{client-id}")
+    public Flux<Account> findByClient(@PathVariable("client-id") String clientId) {
+    	logger.info("find by client");
+    	return accountService.findByClientId(clientId);
+    }
 
     @GetMapping(value = "/accounts", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     @ResponseBody

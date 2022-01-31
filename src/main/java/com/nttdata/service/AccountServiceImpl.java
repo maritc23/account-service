@@ -52,6 +52,11 @@ public class AccountServiceImpl implements AccountService {
     public Flux<Account> findAllAccount() {
         return accountRepo.findAll();
     }
+
+	@Override
+	public Flux<Account> findByClientId(String clientId) {
+		return accountRepo.findByClientId(clientId);
+	}
     
     
     

@@ -14,6 +14,8 @@ public interface AccountService
     Mono<Account> findByAccountId(Integer id);
  
     Flux<Account> findAllAccount();
+    
+    Flux<Account> findByClientId(String clientId);
  
     //Mono<Account> updateCustomer(Account e);
  
