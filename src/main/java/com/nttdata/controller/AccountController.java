@@ -38,46 +38,6 @@ public class AccountController {
         //accountServiceImpl.createAccount(account);
     }
 
-
-   /* quiero invokar a clientService.verifyClient(1)
-    y validar si el resultado existo o no +
-    para hacer mi invocacion a save account*/
-    
-    /*
-    @GetMapping(value = "/test2", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<Customer> test2() {
-    	logger.info("creating customer");
-    	Customer c = clientService.verifyClient2(1);
-    	
-    	return new ResponseEntity<Customer>(c, c != null ? HttpStatus.OK : HttpStatus.NOT_FOUND);
-        //accountServiceImpl.createAccount(account);
-    }/*
-    
-    /*
-    @GetMapping(value = "/test3", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.CREATED)
-    public Mono<Object> test3() {
-    	logger.info("creating customer33");
-    	return clientService.verifyClient(1)
-    	.flatMap(x->{
-    		if(x!=null) {
-    			logger.info(x.getDocumentNumber());
-    			return Mono.just(x);
-    		}
-    		return Mono.empty();
-    	}).flatMap(x => {
-    		x = ok 
-    				asdjasdaklsdjk
-    	})
-    
-    	
-    	//return new ResponseEntity<Mono<Object>>(resp, resp != null ? HttpStatus.OK : HttpStatus.NOT_FOUND);
-    	
-        //accountServiceImpl.createAccount(account);
-    }*/
-    
-    
     @PostMapping("/accounts")
     @ResponseStatus(HttpStatus.CREATED)
     public void createAccount(@RequestBody Account account) {
@@ -126,13 +86,7 @@ public class AccountController {
     		return Mono.empty();
     	});
     	
-    	    	
-    	//Mono<Customer> c = accountService.createAccount(a);
-    	
-    	//c.doOnNext(customer ->  logger.info(customer.getDocumentNumber()));
-    
-    	//return new ResponseEntity<Mono<Customer>>(c, c != null ? HttpStatus.OK : HttpStatus.NOT_FOUND);
-        //accountServiceImpl.createAccount(account);
+
     }
 
 }

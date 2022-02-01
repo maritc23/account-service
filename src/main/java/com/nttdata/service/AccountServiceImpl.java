@@ -28,19 +28,7 @@ public class AccountServiceImpl implements AccountService {
     ClientService clienteService;
 
     public Mono<Account> createAccount(Account account) {
-    	/*return clienteService.verifyClient(new Integer (account.getClientId()))
-    	.flatMap(x->{
-    		if(x!=null) {
-    			logger.info(x.getDocumentNumber());
-    			return Mono.just(account);
-    		}
-    		return Mono.empty();
-    	}).flatMap(x => {
-    		return accountRepo.save(account);
-    	}).flatMap (x=> {
-    		AddAccountResult acr= new AddAccountResult();
-    		Mono.just(acr);
-    	})*/
+    
     	account.setCreateAt(new Date());
     	return accountRepo.save(account);
     }
@@ -57,16 +45,6 @@ public class AccountServiceImpl implements AccountService {
 	public Flux<Account> findByClientId(String clientId) {
 		return accountRepo.findByClientId(clientId);
 	}
-    
-    
-    
-//    public Mono<Account> updateCustomer(Account employee) {
-//        return customerRepo.save(employee);
-//    }
-//
-//    public Mono<Void> deleteCustomer(Integer id) {
-//        return customerRepo.deleteById(id);
-//    }
 
 	
 }
